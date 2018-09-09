@@ -4,6 +4,6 @@
 	"*.js"
   ],
   "main": "index.js",
-  "name": "bayrell-file-system",
+  "name": "bayrell-file-system-nodejs",
   "version": "0.4.2"
 }
