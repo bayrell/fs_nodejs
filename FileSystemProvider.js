@@ -16,11 +16,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-var rtl = require('BayrellRuntime').rtl;
-var Map = require('BayrellRuntime').Map;
-var Vector = require('BayrellRuntime').Vector;
-var ContextObject = require('BayrellRuntime').ContextObject;
-var FileSystemInterface = require('BayrellCommon').FileSystem.FileSystemInterface;
+var rtl = require('bayrell-runtime-nodejs').rtl;
+var Map = require('bayrell-runtime-nodejs').Map;
+var Vector = require('bayrell-runtime-nodejs').Vector;
+var ContextObject = require('bayrell-runtime-nodejs').ContextObject;
+var FileSystemInterface = require('bayrell-common-nodejs').FileSystem.FileSystemInterface;
 
 var fsModule = require('fs');
 var shellModule = require('shelljs');

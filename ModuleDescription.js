@@ -16,11 +16,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-var rtl = require('BayrellRuntime').rtl;
-var Map = require('BayrellRuntime').Map;
-var Vector = require('BayrellRuntime').Vector;
-var ContextInterface = require('BayrellRuntime').Interfaces.ContextInterface;
-var ModuleDescriptionInterface = require('BayrellRuntime').Interfaces.ModuleDescriptionInterface;
+var rtl = require('bayrell-runtime-nodejs').rtl;
+var Map = require('bayrell-runtime-nodejs').Map;
+var Vector = require('bayrell-runtime-nodejs').Vector;
+var ContextInterface = require('bayrell-runtime-nodejs').Interfaces.ContextInterface;
+var ModuleDescriptionInterface = require('bayrell-runtime-nodejs').Interfaces.ModuleDescriptionInterface;
 var FileSystemProviderFactory = require('./FileSystemProviderFactory.js');
 class ModuleDescription{
 	getClassName(){return "BayrellFileSystem.ModuleDescription";}
@@ -41,7 +41,7 @@ class ModuleDescription{
 	 * @return string
 	 */
 	static getModuleVersion(){
-		return "0.1.0";
+		return "0.5.0";
 	}
 	/**
 	 * Init context

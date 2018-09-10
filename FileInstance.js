@@ -16,10 +16,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-var rtl = require('BayrellRuntime').rtl;
-var Map = require('BayrellRuntime').Map;
-var Vector = require('BayrellRuntime').Vector;
-var FileInterface = require('BayrellCommon').FileSystem.FileInterface;
+var rtl = require('bayrell-runtime-nodejs').rtl;
+var Map = require('bayrell-runtime-nodejs').Map;
+var Vector = require('bayrell-runtime-nodejs').Vector;
+var FileInterface = require('bayrell-common-nodejs').FileSystem.FileInterface;
 class FileInstance{
 	getClassName(){return "BayrellFileSystem.FileInstance";}
 	static getParentClassName(){return "";}
