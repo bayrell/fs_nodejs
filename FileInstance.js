@@ -19,14 +19,9 @@
 var rtl = require('bayrell-runtime-nodejs').rtl;
 var Map = require('bayrell-runtime-nodejs').Map;
 var Vector = require('bayrell-runtime-nodejs').Vector;
+var IntrospectionInfo = require('bayrell-runtime-nodejs').IntrospectionInfo;
 var FileInterface = require('bayrell-common-nodejs').FileSystem.FileInterface;
 class FileInstance{
-	getClassName(){return "BayrellFileSystem.FileInstance";}
-	static getParentClassName(){return "";}
-	_init(){
-		if (this.__implements__ == undefined){this.__implements__ = [];}
-		this.__implements__.push(FileInterface);
-	}
 	/**
 	 * Returns stream
 	 */
@@ -41,6 +36,13 @@ class FileInstance{
 	 * Close files
 	 */
 	close(){
+	}
+	/* ======================= Class Init Functions ======================= */
+	getClassName(){return "BayrellFileSystem.FileInstance";}
+	static getParentClassName(){return "";}
+	_init(){
+		if (this.__implements__ == undefined){this.__implements__ = [];}
+		this.__implements__.push(FileInterface);
 	}
 }
 FileInstance.__static_implements__ = [];

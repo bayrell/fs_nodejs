@@ -16,13 +16,34 @@
  *  limitations under the License.
  */
 
+if (false){
+
+function ObjectAssign(res, obj){
+	for (var key in obj){
+		if (res[key] == undefined) res[key] = obj[key];
+		else if (res[key] instanceof Object) ObjectAssign(res[key], obj[key]);
+	}
+}
 
 module.exports = {
-	VERSION: '0.4.0',
+	VERSION: '0.6.0',
+};
+
+/* Root */
+ObjectAssign(module.exports, require("./FileInstance.js"));
+ObjectAssign(module.exports, require("./FileSystemProvider.js"));
+ObjectAssign(module.exports, require("./FileSystemProviderFactory.js"));
+ObjectAssign(module.exports, require("./ModuleDescription.js"));
+
+}
+else{
+
+module.exports = {
+	VERSION: '0.6.0',
 	'FileInstance': require("./FileInstance.js"),
 	'FileSystemProvider': require("./FileSystemProvider.js"),
 	'FileSystemProviderFactory': require("./FileSystemProviderFactory.js"),
 	'ModuleDescription': require("./ModuleDescription.js"),
 };
 
-
+}

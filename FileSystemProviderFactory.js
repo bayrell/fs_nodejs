@@ -19,25 +19,27 @@
 var rtl = require('bayrell-runtime-nodejs').rtl;
 var Map = require('bayrell-runtime-nodejs').Map;
 var Vector = require('bayrell-runtime-nodejs').Vector;
+var IntrospectionInfo = require('bayrell-runtime-nodejs').IntrospectionInfo;
 var CoreObject = require('bayrell-runtime-nodejs').CoreObject;
 var ContextObject = require('bayrell-runtime-nodejs').ContextObject;
 var ContextInterface = require('bayrell-runtime-nodejs').Interfaces.ContextInterface;
 var FactoryInterface = require('bayrell-runtime-nodejs').Interfaces.FactoryInterface;
 var FileSystemProvider = require('./FileSystemProvider.js');
 class FileSystemProviderFactory extends ContextObject{
-	getClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
-	static getParentClassName(){return "ContextObject";}
-	_init(){
-		super._init();
-		if (this.__implements__ == undefined){this.__implements__ = [];}
-		this.__implements__.push(FactoryInterface);
-	}
 	/**
 	 * Returns new Instance
 	 */
 	newInstance(context){
 		var obj = new FileSystemProvider(context);
 		return obj;
+	}
+	/* ======================= Class Init Functions ======================= */
+	getClassName(){return "BayrellFileSystem.FileSystemProviderFactory";}
+	static getParentClassName(){return "ContextObject";}
+	_init(){
+		super._init();
+		if (this.__implements__ == undefined){this.__implements__ = [];}
+		this.__implements__.push(FactoryInterface);
 	}
 }
 FileSystemProviderFactory.__static_implements__ = [];

@@ -19,16 +19,11 @@
 var rtl = require('bayrell-runtime-nodejs').rtl;
 var Map = require('bayrell-runtime-nodejs').Map;
 var Vector = require('bayrell-runtime-nodejs').Vector;
+var IntrospectionInfo = require('bayrell-runtime-nodejs').IntrospectionInfo;
 var ContextInterface = require('bayrell-runtime-nodejs').Interfaces.ContextInterface;
 var ModuleDescriptionInterface = require('bayrell-runtime-nodejs').Interfaces.ModuleDescriptionInterface;
 var FileSystemProviderFactory = require('./FileSystemProviderFactory.js');
 class ModuleDescription{
-	getClassName(){return "BayrellFileSystem.ModuleDescription";}
-	static getParentClassName(){return "";}
-	_init(){
-		if (this.__implements__ == undefined){this.__implements__ = [];}
-		this.__implements__.push(ModuleDescriptionInterface);
-	}
 	/**
 	 * Returns module name
 	 * @return string
@@ -69,6 +64,13 @@ class ModuleDescription{
 	 */
 	static getRequiredModules(context){
 		return (new Map()).set("Runtime", ">=0.2 <1.0");
+	}
+	/* ======================= Class Init Functions ======================= */
+	getClassName(){return "BayrellFileSystem.ModuleDescription";}
+	static getParentClassName(){return "";}
+	_init(){
+		if (this.__implements__ == undefined){this.__implements__ = [];}
+		this.__implements__.push(ModuleDescriptionInterface);
 	}
 }
 ModuleDescription.__static_implements__ = [];

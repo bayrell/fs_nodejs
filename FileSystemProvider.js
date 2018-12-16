@@ -19,6 +19,7 @@
 var rtl = require('bayrell-runtime-nodejs').rtl;
 var Map = require('bayrell-runtime-nodejs').Map;
 var Vector = require('bayrell-runtime-nodejs').Vector;
+var IntrospectionInfo = require('bayrell-runtime-nodejs').IntrospectionInfo;
 var ContextObject = require('bayrell-runtime-nodejs').ContextObject;
 var FileSystemInterface = require('bayrell-common-nodejs').FileSystem.FileSystemInterface;
 
@@ -27,13 +28,6 @@ var shellModule = require('shelljs');
 var upathModule = require('upath');
 var pathModule = require('path');
 class FileSystemProvider extends ContextObject{
-	getClassName(){return "BayrellFileSystem.FileSystemProvider";}
-	static getParentClassName(){return "ContextObject";}
-	_init(){
-		super._init();
-		if (this.__implements__ == undefined){this.__implements__ = [];}
-		this.__implements__.push(FileSystemInterface);
-	}
 	/**
 	 * Returns files and folders from directory
 	 * @param string basedir
@@ -164,6 +158,14 @@ class FileSystemProvider extends ContextObject{
 		if (fsModule.existsSync(dirpath))
 			return true;
 		shellModule.mkdir('-p', dirpath);
+	}
+	/* ======================= Class Init Functions ======================= */
+	getClassName(){return "BayrellFileSystem.FileSystemProvider";}
+	static getParentClassName(){return "ContextObject";}
+	_init(){
+		super._init();
+		if (this.__implements__ == undefined){this.__implements__ = [];}
+		this.__implements__.push(FileSystemInterface);
 	}
 }
 FileSystemProvider.__static_implements__ = [];
