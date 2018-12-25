@@ -28,7 +28,7 @@ class ModuleDescription{
 	 * Returns module name
 	 * @return string
 	 */
-	static getModuleName(){
+	static getName(){
 		return "BayrellFileSystem";
 	}
 	/**
@@ -52,11 +52,10 @@ class ModuleDescription{
 		context.registerProviderFactory("default:fs", new FileSystemProviderFactory());
 	}
 	/**
-	 * Returns description interfaces of the current module
-	 * @return Vector<string>
+	 * Called then context read config
+	 * @param Map<mixed> config
 	 */
-	static getInterfaces(){
-		return (new Vector()).push("Runtime.Interfaces.ModuleDescriptionInterface");
+	static onReadConfig(context, config){
 	}
 	/**
 	 * Returns required modules
