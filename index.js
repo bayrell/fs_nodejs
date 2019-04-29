@@ -26,7 +26,7 @@ function ObjectAssign(res, obj){
 }
 
 module.exports = {
-	VERSION: '0.7.1',
+	VERSION: '0.7.2',
 };
 
 /* Root */
@@ -39,7 +39,7 @@ ObjectAssign(module.exports, require("./ModuleDescription.js"));
 else{
 
 module.exports = {
-	VERSION: '0.7.1',
+	VERSION: '0.7.2',
 	'FileInstance': require("./FileInstance.js"),
 	'FileSystemProvider': require("./FileSystemProvider.js"),
 	'FileSystemProviderFactory': require("./FileSystemProviderFactory.js"),
